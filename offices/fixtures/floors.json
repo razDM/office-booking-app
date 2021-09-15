@@ -1,0 +1,7 @@
+[{
+  "model": "offices_office",
+  "id": 1,
+  "fields": [{
+    "name": "First floor"
+  }]
+}]

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>My first Django homepage</title>
+{% endblock%}
+{% block content%}
+    <h1>{{ title }}</h1>
+    <h2>Homepage</h2>
+    <h3>Services</h3>
+    <ul>
+        {% for service in services %}
+            <li style="margin-bottom: 10px; {% if not forloop.counter0 %}background-color: #FCFF33;{% endif %}">
+                {{ forloop.counter0 }} <strong>{{ service.name }}</strong>: {{ service.value }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% include 'menu.html' %}
+
+    </body>
+</html>

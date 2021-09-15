@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Offices Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>My Offices Page</h1>
+    <ul>
+        {% for offices in offices %}
+            <li style="margin-bottom: 10px">
+                {{ offices.floor }} - {{ offices.name }} <a href="{% url 'offices:details' offices.id %}">View office</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+#am ramas la curs 10, min 1:38
