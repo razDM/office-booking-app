@@ -1,0 +1,72 @@
+[{
+  "model": "offices.office",
+  "pk": 1,
+  "fields": {
+    "name": "Single office - total of 4 single desks",
+    "zone_id": 1,
+    "quantity": 4
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 2,
+  "fields": {
+    "name": "Single office - total of 4 single desks",
+    "zone_id": 2,
+    "quantity": 4
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 3,
+  "fields": {
+    "name": "Double office - total of 4 double desks",
+    "zone_id": 3,
+    "quantity": 8
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 4,
+  "fields": {
+    "name": "Double office - total of 4 double desks",
+    "zone_id": 4,
+    "quantity": 8
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 5,
+  "fields": {
+    "name": "Single office - total of 4 single desks",
+    "zone_id": 5,
+    "quantity": 4
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 6,
+  "fields": {
+    "name": "Single office - total of 4 single desks",
+    "zone_id": 6,
+    "quantity": 4
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 7,
+  "fields": {
+    "name": "Double office - total of 4 double desks",
+    "zone_id": 7,
+    "quantity": 8
+  }
+},
+{
+  "model": "offices.office",
+  "pk": 8,
+  "fields": {
+    "name": "Double office - total of 4 double desks",
+    "zone_id": 8,
+    "quantity": 8
+  }
+}]

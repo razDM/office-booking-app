@@ -1,9 +1,9 @@
-X = 'X'
+P = 'P'
 K = 'K'
 R = 'R'
 
 AVAILABLE_EQUIPMENTS = {
-    X: 'xerox/printer',
-    K: 'kitchen',
+    P: 'xerox/printer',
+    K: 'kitchen area',
     R: 'relaxing area'
 }

@@ -1,4 +1,6 @@
-from django.shortcuts import render, HttpResponse, Http404
+from django.shortcuts import render
+from offices.models import Office
+
 
 offices = [{
     'id': 1,
@@ -17,6 +19,8 @@ offices = [{
 
 
 def show_all_offices(request):
+    offices = Office.objects.all()
+
     return render(request, 'offices/offices.html', {
         'offices': offices,
     })
