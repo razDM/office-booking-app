@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}
-    <title>My first Django homepage</title>
+    <title>Office Booking homepage</title>
 {% endblock%}
 {% block content%}
     <h1>{{ title }}</h1>
     <h2>Homepage</h2>
     <h3>Services</h3>
     <ul>
-        {% for service in services %}
-            <li style="margin-bottom: 10px; {% if not forloop.counter0 %}background-color: #FCFF33;{% endif %}">
-                {{ forloop.counter0 }} <strong>{{ service.name }}</strong>: {{ service.value }}
+        {% for service in services  %}
+            <li>
+                <strong>{{ service.name }}</strong>: {{ service.value }}
             </li>
         {% endfor %}
     </ul>
+    <h4>Please enter your QR code to logg in !</h4>
+
+    <p>
+        This is the company's Office Booking App.
+        Please read this information before booking your seat
+    </p>
 {% endblock %}
-<html>
-    <head>
-
-    </head>
-    <body>
-        {% include 'menu.html' %}
-
-    </body>
-</html>

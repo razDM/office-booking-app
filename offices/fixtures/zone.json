@@ -1,79 +1,71 @@
 [{
   "model": "offices.zone",
-  "pk": 1,
   "fields": {
     "name": "Zone 1 - total of 4 single desks - equipped with printer ",
-    "floor_id": 1,
+    "floor": "1",
     "zone_equipment": "X",
     "zone_location": "Z1"
   }
 },
 {
   "model": "offices.zone",
-  "pk": 2,
   "fields": {
     "name": "Zone 2 - total of 4 single desks - equipped with relaxing area ",
-    "floor_id": 1,
+    "floor": "1",
     "zone_equipment": "R",
     "zone_location": "Z2"
   }
 },
 {
   "model": "offices.zone",
-  "pk":3,
   "fields": {
     "name": "Zone 3  - total of 4 double desks - equipped with kitchen area ",
-    "floor_id": 1,
+    "floor": "1",
     "zone_equipment": "K",
     "zone_location": "Z3"
   }
 },
 {
   "model": "offices.zone",
-  "pk":4,
   "fields": {
     "name": "Zone 4  - total of 4 double desks - equipped with printer",
-    "floor_id": 1,
+    "floor": "1",
     "zone_equipment": "X",
     "zone_location": "Z4"
   }
 },
 {
   "model": "offices.zone",
-  "pk": 5,
   "fields": {
     "name": "Zone 1 - total of 4 single desks - equipped with printer ",
-    "floor_id": 2,
+    "floor": "2",
     "zone_equipment": "X",
     "zone_location": "Z1"
   }
 },
 {
   "model": "offices.zone",
-  "pk": 6,
   "fields": {
     "name": "Zone 2 - total of 4 single desks - equipped with relaxing area ",
-    "floor_id": 2,
+    "floor": "2",
     "zone_equipment": "R",
     "zone_location": "Z2"
   }
 },
 {
   "model": "offices.zone",
-  "pk":7,
   "fields": {
     "name": "Zone 3  - total of 4 double desks - equipped with kitchen area ",
-    "floor_id": 2,
+    "floor": "2",
     "zone_equipment": "K",
     "zone_location": "Z3"
   }
 },
 {
   "model": "offices.zone",
-  "pk":8,
   "fields": {
     "name": "Zone 4  - total of 4 double desks - equipped with printer",
-    "floor_id": 2,
+    "floor": "2",
     "zone_equipment": "X",
     "zone_location": "Z4"
   }

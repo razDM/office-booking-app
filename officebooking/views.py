@@ -3,12 +3,15 @@ from django.shortcuts import render
 
 def homepage_view(request):
     return render(request, 'homepage.html',  {
-        'title': 'Django Office booking',
+        'title': 'Office Booking',
         'services': [{
-            'name': 'Available offices',
-            'value': '5',
+            'name': 'Available Floors',
+            'value': '2',
         }, {
-            'name': 'Employees booked an office: ',
-            'value': '15'
+            'name': 'Available Zones',
+            'value': '8'
+        }, {
+            'name': 'Available Seats',
+            'value': '68'
         }]
     })

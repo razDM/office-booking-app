@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>{{ offices.name }}</title>
+    <title>{{ office.name }}</title>
 {% endblock %}
 
 {% block content %}
-    <p></p><strong>Floor:</strong>{{ offices.floor }}<p>
-    <p></p><strong>Name:</strong>{{ offices.name }}<p>
+    <p><strong>Name:</strong> {{ office.name }}</p>
+    <p><strong>Zone:</strong> {{ office.zone.name }}</p>
+    <p><strong>Floor:</strong> {{ office.zone.floor.name }}</p>
 {% endblock %}

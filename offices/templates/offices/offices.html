@@ -7,9 +7,20 @@
 {% block content %}
     <h1>My Offices Page</h1>
     <ul>
-        {% for offices in offices %}
-            <li style="margin-bottom: 10px">
-                {{ offices.floor }} - {{ offices.name }} <a href="{% url 'offices:details' offices.id %}">View office</a>
+        {% for office in offices %}
+            <li style="margin-bottom: 10px;">
+                <div>
+                    {{ office.name }} <a href="{% url 'offices:details' office.id %}">View details</a>
+                </div>
+                <div>
+                    <ul>
+                        Zone: {{ zone.name }}
+                    </ul>
+                    <ul>
+                        Floor: {{ floor.floor_level }}
+                    </ul>
+                </div>
+
             </li>
         {% endfor %}
     </ul>
