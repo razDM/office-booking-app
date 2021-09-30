@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Floors Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>My Floors Page</h1>
+    <ul>
+        {% for floor in floors %}
+            <li>
+                {{ floor.name }} {{ floor.floor_levels }} ({{ floor.zones.all|length }} zones)
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

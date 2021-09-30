@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Zones Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>My Zones Page</h1>
+    <ul>
+        {% for zone in zones %}
+            <li>
+                {{ zone.name }} {{ zone.zone_location }} ({{ zone.offices.all|length }} offices)
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -20,5 +20,9 @@ from officebooking.views import homepage_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage_view),
-    path('offices/', include('offices.urls'))
+    path('offices/', include('offices.urls')),
+    path('zones/', include('zones.urls')),
+    path('floors/', include('floors.urls')),
+    path('users/', include('users.urls')),
+
 ]

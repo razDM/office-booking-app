@@ -20,4 +20,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-#am ramas la curs 11, ~25:00 - nu a mers migrarea!
+
