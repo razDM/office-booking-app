@@ -1,64 +1,58 @@
-[{
-  "model": "offices.office",
-  "fields": {
-    "name": "Single office - total of 4 single desks",
-    "zone": "1",
-    "quantity": 4
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Single office - total of 4 single desks",
-    "zone": "2",
-    "quantity": 4
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Double office - total of 4 double desks",
-    "zone": "3",
-    "quantity": 8
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Double office - total of 4 double desks",
-    "zone": "4",
-    "quantity": 8
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Single office - total of 4 single desks",
-    "zone": "5",
-    "quantity": 4
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Single office - total of 4 single desks",
-    "zone": "5",
-    "quantity": 4
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Double office - total of 4 double desks",
-    "zone": "7",
-    "quantity": 8
-  }
-},
-{
-  "model": "offices.office",
-  "fields": {
-    "name": "Double office - total of 4 double desks",
-    "zone": "8",
-    "quantity": 8
-  }
-}]
+[
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 1",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 2",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 3",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 4",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 5",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 6",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 7",
+         "zone":"16"
+      }
+   },
+   {
+      "model":"models.office",
+      "fields":{
+         "name":"Office No 8",
+         "zone":"16"
+      }
+   }
+]

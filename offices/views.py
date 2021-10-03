@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from offices.models import Office
+from models.offices import Office
 
 
 def show_all_offices(request):

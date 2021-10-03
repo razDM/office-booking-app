@@ -1,0 +1,8 @@
+[{
+  "model": "models.zone",
+  "fields": {
+    "name": "Zone 1",
+    "floor": "14",
+    "zone_location": "Z1"
+  }
+}]
