@@ -1,13 +1,13 @@
 [{
-  "model": "models.floor",
-  "pk": 14,
+  "model": "floors.floor",
+  "pk": 1,
   "fields": {
     "name": "First floor",
     "floor_levels": "F1"
   }
 },
 {
-  "model": "models.floor",
+  "model": "floors.floor",
   "pk": 2,
   "fields": {
     "name": "Second floor",

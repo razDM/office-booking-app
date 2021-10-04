@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models.floors import Floor
+from floors.models import Floor
 
 
 def show_floors(request):

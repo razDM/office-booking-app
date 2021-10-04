@@ -31,8 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
-    'models.apps.ModelsConfig',
     'users.apps.UsersConfig',
     'floors.apps.FloorsConfig',
     'zones.apps.ZonesConfig',

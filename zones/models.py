@@ -1,3 +1,16 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+from utils.constants.zone_location import ZONE_LOCATION
+from floors.models import Floor
 
-# Create your models here.
+
+AuthUserModel = get_user_model()
+
+
+class Zone(models.Model):
+    name = models.CharField(max_length=128, unique=False, null=False)
+    floor = models.ForeignKey(Floor, on_delete=models.DO_NOTHING, default=None, null=True)
+    zone_location = models.CharField(choices=ZONE_LOCATION, max_length=20)
+
+    def __str__(self):
+        return f'<Zone object ID = {self.id}>'

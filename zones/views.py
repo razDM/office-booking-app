@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models.zones import Zone
+from zones.models import Zone
 
 
 def show_zones(request):

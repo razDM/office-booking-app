@@ -7,14 +7,13 @@ Z6 = 'Z6'
 Z7 = 'Z7'
 Z8 = 'Z8'
 
-ZONE_LOCATION= [{
-    'Z1': 'Zone one',
-    'Z2': 'Zone two',
-    'Z3': 'Zone three',
-    'Z4': 'Zone four',
-    'Z5': 'Zone five',
-    'Z6': 'Zone six',
-    'Z7': 'Zone seven',
-    'Z8': 'Zone eight',
-}
+ZONE_LOCATION = [
+    ('Z1', 'Zone one'),
+    ('Z2', 'Zone two'),
+    ('Z3', 'Zone three'),
+    ('Z4', 'Zone four'),
+    ('Z5', 'Zone five'),
+    ('Z6', 'Zone six'),
+    ('Z7', 'Zone seven'),
+    ('Z8', 'Zone eight'),
 ]

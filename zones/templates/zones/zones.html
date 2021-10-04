@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Zones Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>My Zoones Page</h1>
+    <ul>
+        {% for zone in zones %}
+            <li style="margin-bottom: 10px;">
+                <div>
+                    {{ zone.name }} <a href="{% url 'zone:details' zone.id %}">View details</a>
+                </div>
+                <div>
+                    <ul>
+                        Office: {{ zone.office.name }}
+                    </ul>
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
