@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +28,7 @@ SECRET_KEY = 'django-insecure-o9&v&@0*h9eyxsv)jpys7-v6cnp09j#bz9+&*0n9)72&(xk$_#
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOCALHOST_DOMAIN = 'http://localhost:8000'
 
 
 # Application definition
@@ -134,4 +137,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+AUTH_USER_MODEL = 'users.AuthUser'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = '587'

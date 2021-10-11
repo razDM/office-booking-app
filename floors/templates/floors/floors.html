@@ -1,32 +1,18 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>My Floors Page</title>
+    <title>My Offices Page</title>
 {% endblock %}
 
 {% block content %}
-<div class="nav" style="background-color: #638acc;">
-  <div class="nav-header">
-    <div class="nav-title">
-      <a href="{% url 'Zone one' %}">Floors</a>
-    </div>
-  </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
-  <input type="checkbox" id="nav-check">
-  <div class="dropdown">
-    <button class="dropbtn">F1</button>
-    <div class="dropdown-content" style="right: 20px;">
-      <a href="{% url 'F1_Zone1' %}">Zone 1</a>
-      <a href="{% url 'F1_Zone2' %}">Zone 2</a>
-      <a href="{% url 'F1_Zone3' %}">Zone 3</a>
-      <a href="{% url 'F1_Zone4' %}">Zone 4</a>
-    </div>
-  </div>
-</div>
-{% endblock content %}
+    <h1>Please choose an available office:</h1>
+    <ul>
+        {% for floor in floors %}
+            <li style="margin-bottom: 10px;">
+                <div>
+                    {{ floor.name }} <a href="{% url 'zone:details' floor.id %}">View details</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -10,8 +10,8 @@ def show_all_offices(request):
     })
 
 
-def show_offices_details(request, offices_id):
-    office = get_object_or_404(Office, pk=offices_id)
+def show_offices_details(request, zone_id):
+    office = get_object_or_404(Office, pk=zone_id)
     return render(request, 'offices/details.html', {
         'office': office,
     })

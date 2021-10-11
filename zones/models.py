@@ -9,7 +9,7 @@ AuthUserModel = get_user_model()
 
 class Zone(models.Model):
     name = models.CharField(max_length=128, unique=False, null=False)
-    floor = models.ForeignKey(Floor, on_delete=models.DO_NOTHING, default=None, null=True)
+    floor = models.ForeignKey(Floor, related_name='floor', on_delete=models.CASCADE, default=None, null=True)
     zone_location = models.CharField(choices=ZONE_LOCATION, max_length=20)
 
     def __str__(self):

@@ -17,7 +17,7 @@ def send_activation_mail(activation):
         'url': f'{settings.LOCALHOST_DOMAIN}{activate_route}'
     }
 
-    template = get_template('users/emails/activation.html')
+    template = get_template('activation.html')
     content = template.render(context)
 
     mail = EmailMultiAlternatives(
