@@ -9,9 +9,9 @@ def show_zones(request):
     })
 
 
-def show_zones_details(request, zones_id):
-    office = get_object_or_404(Office, pk=zones_id)
-    return render(request, 'offices/details.html', {
-        'office': office,
+def show_zones_details_by_floor(request, floor_id):
+    # zone = get_object_or_404(Zone, floor_id=floor_id)
+    return render(request, 'zones/zones.html', {
+        'zones': Zone.objects.filter(floor_id=floor_id),
     })
 

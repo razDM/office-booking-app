@@ -23,5 +23,8 @@ urlpatterns = [
     path('offices/', include('offices.urls')),
     path('zones/', include('zones.urls')),
     path('floors/', include('floors.urls')),
-    path('users/', include('users.urls'))
-]
+    path('users/', include('users.urls'))]
+    # path('offices/', include(('offices.urls','offices'),namespace='offices')),
+    # path('zones/', include(('zones.urls','zones'),namespace='zones')),
+    # path('floors/', include(('floors.urls','floors'),namespace='floors')),
+    # path('users/', include(('users.urls','users'),namespace='users'))

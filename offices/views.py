@@ -11,8 +11,7 @@ def show_all_offices(request):
 
 
 def show_offices_details(request, zone_id):
-    office = get_object_or_404(Office, pk=zone_id)
-    return render(request, 'offices/details.html', {
-        'office': office,
+    return render(request, 'offices/offices.html', {
+        'offices': Office.objects.filter(zone_id=zone_id),
     })
 

@@ -10,14 +10,8 @@
         {% for office in offices %}
             <li style="margin-bottom: 10px;">
                 <div>
-                    {{ office.name }} <a href="{% url 'offices:details' office.id %}">View details</a>
-                </div>
-                <div>
                     <ul>
-                        Zone: {{ office.zone.name }}
-                    </ul>
-                    <ul>
-                        Floor: {{ office.zone.floor.name }}
+                        Office Name: {{ office.name }}
                     </ul>
                 </div>
 

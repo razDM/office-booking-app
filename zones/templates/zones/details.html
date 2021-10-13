@@ -7,11 +7,12 @@
 {% block content %}
     <h1>Please choose an available office:</h1>
     <ul>
-        {% for floor in floors %}
+        {% for zone in zones %}
             <li style="margin-bottom: 10px;">
                 <div>
-                    {{ floor.name }} <a href="{% url 'zones:floor_zones' floor.id %}">View zones</a>
+                    {{ office.name }} <a href="{% url 'offices:detai' zone.zone_id %}">View details</a>
                 </div>
+
             </li>
         {% endfor %}
     </ul>

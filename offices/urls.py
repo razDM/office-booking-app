@@ -5,6 +5,6 @@ app_name = 'offices'
 
 urlpatterns = [
     path('', show_all_offices, name='all'),
-    path('<int:offices_id>/', show_offices_details, name='details'),
+    path('<int:zone_id>/', show_offices_details, name='details'),
 
 ]
