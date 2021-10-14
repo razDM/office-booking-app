@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o9&v&@0*h9eyxsv)jpys7-v6cnp09j#bz9+&*0n9)72&(xk$_#'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'officebooking.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'NAME': 'office_booking_app',
-        'PORT': 3306,
-        'USER': 'root',
-        'PASSWORD': '1qaz!QAZ'
+        'HOST': config('DB_HOST', 'localhost'),
+        'NAME': config('DB_NAME', 'office_booking_app'),
+        'PORT': config('DB_PORT', '3306'),
+        'USER': config('DB_USER', 'root'),
+        'PASSWORD': config('DB_PASSWORD'),
 
     }
 }
@@ -132,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

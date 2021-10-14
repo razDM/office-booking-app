@@ -17,97 +17,209 @@
       "model":"offices.office",
       "fields":{
          "name":"Office No 3",
-         "zone": "2"
+         "zone": "1"
       }
    },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 4",
-         "zone":"2"
+         "zone":"1"
       }
    },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 5",
-         "zone":"3"
+         "zone":"2"
       }
    },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 6",
-         "zone":"3"
+         "zone":"2"
       }
    },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 7",
-         "zone":"4"
+         "zone":"2"
       }
    },
    {
       "model": "offices.office",
       "fields": {
          "name": "Office No 8",
-         "zone": "4"
+         "zone": "2"
       }
    },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 9",
-         "zone":"5"
+         "zone":"3"
       }
     },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 10",
-         "zone":"5"
+         "zone":"3"
       }
     },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 11",
-         "zone":"6"
+         "zone":"3"
       }
     },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 12",
-         "zone":"6"
+         "zone":"3"
       }
     },
    {
       "model":"offices.office",
       "fields":{
          "name":"Office No 13",
-         "zone":"7"
+         "zone":"4"
       }
     },
    {
       "model": "offices.office",
       "fields": {
          "name": "Office No 14",
-         "zone": "7"
+         "zone": "4"
       }
    },
    {
       "model": "offices.office",
       "fields": {
          "name": "Office No 15",
-         "zone": "8"
+         "zone": "4"
       }
    },
    {
       "model": "offices.office",
       "fields": {
          "name": "Office No 16",
+         "zone": "4"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 17",
+         "zone": "5"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 18",
+         "zone": "5"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 19",
+         "zone": "5"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 20",
+         "zone": "5"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 21",
+         "zone": "6"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 22",
+         "zone": "6"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 23",
+         "zone": "6"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 24",
+         "zone": "6"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 25",
+         "zone": "7"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 26",
+         "zone": "7"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 27",
+         "zone": "7"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 28",
+         "zone": "7"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 29",
+         "zone": "8"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 30",
+         "zone": "8"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 31",
+         "zone": "8"
+      }
+   },
+   {
+      "model": "offices.office",
+      "fields": {
+         "name": "Office No 32",
          "zone": "8"
       }
    }

@@ -5,11 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    <h1>Please choose a zone:</h1>
     <ul>
         {% for zone in zones %}
             <li style="margin-bottom: 10px;">
                 <div>
-                    {{ zone.name }} <a href="{% url 'offices:details' zone.id %}">View Desk</a>
+                    <a class="btn btn-outline-primary" href="{% url 'offices:details' zone.id %}">{{ zone.name }}</a>
                 </div>
             </li>
         {% endfor %}

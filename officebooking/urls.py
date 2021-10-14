@@ -15,16 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from officebooking.views import homepage_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage_view),
     path('offices/', include('offices.urls')),
-    path('zones/', include('zones.urls')),
-    path('floors/', include('floors.urls')),
+    path('zones/', include('zones.urls', 'offices.urls')),
+    path('floors/', include('floors.urls', 'zones.urls')),
     path('users/', include('users.urls'))]
     # path('offices/', include(('offices.urls','offices'),namespace='offices')),
     # path('zones/', include(('zones.urls','zones'),namespace='zones')),
     # path('floors/', include(('floors.urls','floors'),namespace='floors')),
     # path('users/', include(('users.urls','users'),namespace='users'))
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

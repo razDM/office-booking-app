@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}
     <title>Office Booking homepage</title>
 {% endblock%}
+
+{% block styles %}
+<!--    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}" />-->
+{%endblock%}
 {% block content%}
-    <h1>{{ title }}</h1>
-    <h2>Homepage</h2>
+    <h1>
+        <img src="https://i.pinimg.com/originals/05/3b/b9/053bb9b3b5534c448998e1065d01009e.png" width="50" />
+        <span>{{ title }}</span>
+    </h1>
+    <p class="hero__subtitle">Back to the office in safety</p>
     <h3>Services</h3>
     <ul>
         {% for service in services  %}
@@ -13,10 +22,14 @@
             </li>
         {% endfor %}
     </ul>
-    <h4>Please enter your QR code to logg in !</h4>
+    <h4>In order to book your seat, please login first!</h4>
 
     <p>
         This is the company's Office Booking App.
-        Please read this information before booking your seat
+        Please read this information for more covid information
     </p>
+    <h5>
+        <img src="https://www.iadea.com/wp-content/uploads/feat-img-desk-booking-system.jpg"/>
+
+    </h5>
 {% endblock %}

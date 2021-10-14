@@ -12,6 +12,6 @@ def homepage_view(request):
             'value': '8'
         }, {
             'name': 'Available Seats',
-            'value': '68'
+            'value': '32'
         }]
     })

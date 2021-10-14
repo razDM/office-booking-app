@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>My Offices Page</title>
+    <title>My Floor Page</title>
 {% endblock %}
 
 {% block content %}
-    <h1>Please choose an available office:</h1>
+    <h1>Please choose a floor:</h1>
     <ul>
         {% for floor in floors %}
             <li style="margin-bottom: 10px;">
                 <div>
-                    {{ floor.name }} <a href="{% url 'zones:floor_zones' floor.id %}">View zones</a>
+                    <a class="btn btn-outline-primary" href="{% url 'zones:floor_zones' floor.id %}">{{ floor.name }}</a>
                 </div>
             </li>
         {% endfor %}
