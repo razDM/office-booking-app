@@ -1,0 +1,80 @@
+[{
+  "model": "selection.zone",
+    "pk": 1,
+  "fields": {
+    "name": "Zone 1",
+    "floor": "1",
+    "zone_location": "Z1"
+  }
+},
+  {
+  "model": "selection.zone",
+      "pk": 2,
+
+  "fields": {
+    "name": "Zone 2",
+    "floor": "1",
+    "zone_location": "Z2"
+  }
+},
+{
+  "model": "selection.zone",
+    "pk": 3,
+
+  "fields": {
+    "name": "Zone 3",
+    "floor": "1",
+    "zone_location": "Z3"
+  }
+},
+{
+  "model": "selection.zone",
+    "pk": 4,
+
+  "fields": {
+    "name": "Zone 4",
+    "floor": "1",
+    "zone_location": "Z4"
+  }
+},
+{
+  "model": "selection.zone",
+    "pk": 5,
+
+  "fields": {
+    "name": "Zone 5",
+    "floor": "2",
+    "zone_location": "Z5"
+  }
+},
+{
+  "model": "selection.zone",
+    "pk": 6,
+
+  "fields": {
+    "name": "Zone 6",
+    "floor": "2",
+    "zone_location": "Z6"
+  }
+},
+{
+  "model": "selection.zone",
+    "pk": 7,
+
+  "fields": {
+    "name": "Zone 7",
+    "floor": "2",
+    "zone_location": "Z7"
+  }
+},
+{
+  "model": "selection.zone",
+    "pk": 8,
+
+  "fields": {
+    "name": "Zone 8",
+    "floor": "2",
+    "zone_location": "Z8"
+  }
+}
+]

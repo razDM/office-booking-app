@@ -22,13 +22,13 @@ from officebooking.views import homepage_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage_view),
-    path('offices/', include('offices.urls')),
-    path('zones/', include('zones.urls', 'offices.urls')),
-    path('floors/', include('floors.urls', 'zones.urls')),
+    path('offices/', include('selection.urls')),
+    path('zones/', include('selection.urls')),
+    path('floors/', include('selection.urls')),
     path('users/', include('users.urls'))]
     # path('offices/', include(('offices.urls','offices'),namespace='offices')),
     # path('zones/', include(('zones.urls','zones'),namespace='zones')),
-    # path('floors/', include(('floors.urls','floors'),namespace='floors')),
+    # path('selection/', include(('selection.urls','selection'),namespace='selection')),
     # path('users/', include(('users.urls','users'),namespace='users'))
 
 if settings.DEBUG is True:

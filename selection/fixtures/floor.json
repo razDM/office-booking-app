@@ -1,0 +1,16 @@
+[{
+  "model": "selection.floor",
+  "pk": 1,
+  "fields": {
+    "name": "First floor",
+    "floor_levels": "F1"
+  }
+},
+{
+  "model": "selection.floor",
+  "pk": 2,
+  "fields": {
+    "name": "Second floor",
+    "floor_levels": "F2"
+  }
+}]

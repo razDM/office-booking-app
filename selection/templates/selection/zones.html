@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ zone.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Please choose a zone:</h1>
+    <ul>
+        {% for zone in zones %}
+            <li style="margin-bottom: 10px;">
+                <div>
+                    <a class="btn btn-primary btn-sm" href="{% url 'selection:office_details' zone.id %}">{{ zone.name }}</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

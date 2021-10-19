@@ -35,18 +35,18 @@ LOCALHOST_DOMAIN = 'http://localhost:8000'
 
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
-    'floors.apps.FloorsConfig',
-    'zones.apps.ZonesConfig',
-    'offices.apps.OfficesConfig',
+    'selection.apps.SelectionConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,8 +142,18 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.AuthUser'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_USE_TLS = True
-EMAIL_PORT = '587'
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASS')
+DEFAULT_EMAIL_FROM = EMAIL_HOST_USER
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+]
+LOGIN_URL = 'users:login'
+
 #changes here to use smtp???####
