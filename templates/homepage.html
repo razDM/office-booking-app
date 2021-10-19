@@ -9,27 +9,30 @@
 <!--    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}" />-->
 {%endblock%}
 {% block content%}
-    <h1>
-        <img src="https://i.pinimg.com/originals/05/3b/b9/053bb9b3b5534c448998e1065d01009e.png" width="50" />
-        <span>{{ title }}</span>
-    </h1>
-    <p class="hero__subtitle">Back to the office in safety</p>
-    <h3>Services</h3>
-    <ul>
-        {% for service in services  %}
-            <li>
-                <strong>{{ service.name }}</strong>: {{ service.value }}
-            </li>
-        {% endfor %}
-    </ul>
-    <h4>In order to book your seat, please login first!</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h1>
+                <img src="https://i.pinimg.com/originals/05/3b/b9/053bb9b3b5534c448998e1065d01009e.png" width="50" />
+                <span>{{ title }}</span>
+            </h1>
+            <p class="hero__subtitle">Back to the office in safety</p>
+            <h3>Services</h3>
+            <ul>
+                {% for service in services  %}
+                    <li>
+                        <strong>{{ service.name }}</strong>: {{ service.value }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <h4>In order to book your seat, please login first!</h4>
+        </div>
+        <div class="col-8">
+            <img src="https://smartway2.com/wp-content/uploads/2019/09/Prevent-hot-desking-failure.jpg.webp"width="500"/>
+        </div>
 
-    <p>
-        This is the company's Office Booking App.
-        Please read this information for more covid information
-    </p>
-    <h5>
-        <img src="https://www.iadea.com/wp-content/uploads/feat-img-desk-booking-system.jpg"/>
-
-    </h5>
+            </div>
+            <p>
+            For more information during COVID-19 restrictions in Romania, click "View more"
+        </p><a  class="btn btn-outline-secondary" href="http://www.ms.ro/" target="_blank">View more...</a>
 {% endblock %}

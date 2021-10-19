@@ -10,7 +10,7 @@
         {% for floor in floors %}
             <li style="margin-bottom: 10px;">
                 <div>
-                    <a class="btn btn-outline-primary" href="{% url 'zones:floor_zones' floor.id %}">{{ floor.name }}</a>
+                    <a class="btn btn-primary btn-sm" href="{% url 'zones:floor_zones' floor.id %}">{{ floor.name }}</a>
                 </div>
             </li>
         {% endfor %}

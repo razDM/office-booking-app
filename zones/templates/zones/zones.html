@@ -10,7 +10,7 @@
         {% for zone in zones %}
             <li style="margin-bottom: 10px;">
                 <div>
-                    <a class="btn btn-outline-primary" href="{% url 'offices:details' zone.id %}">{{ zone.name }}</a>
+                    <a class="btn btn-primary btn-sm" href="{% url 'offices:details' zone.id %}">{{ zone.name }}</a>
                 </div>
             </li>
         {% endfor %}
