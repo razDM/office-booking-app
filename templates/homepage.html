@@ -25,7 +25,14 @@
                     </li>
                 {% endfor %}
             </ul>
-            <h4>In order to book your seat, please login first!</h4>
+            {% if not request.user.is_authenticated %}
+                <h4>In order to book your seat, please login first!</h4>
+                <a  class="btn btn-success" href="{% url 'users:login' %}">Log in</a>
+            {% else %}
+                <h4>Before leaving the page, please logout !</h4>
+                <a class="btn btn-danger" href="{% url 'users:logout' %}">Logout</a>
+            {% endif %}
+
         </div>
         <div class="col-8">
             <img src="https://smartway2.com/wp-content/uploads/2019/09/Prevent-hot-desking-failure.jpg.webp"width="500"/>
