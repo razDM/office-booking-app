@@ -10,7 +10,6 @@ from utils.constants.activation import ACTIVATION_DICT
 
 
 def login_user(request):
-    print('request.user', request.user)
     if request.user.is_authenticated:
         return redirect('/')
 
@@ -52,7 +51,6 @@ def register_user(request):
 
 @login_required
 def show_profile(request):
-
     if request.method == 'GET':
         form = ProfileImageForm()
     else:

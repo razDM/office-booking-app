@@ -20,16 +20,13 @@ from django.conf.urls.static import static
 from officebooking.views import homepage_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', homepage_view),
     path('offices/', include('selection.urls')),
     path('zones/', include('selection.urls')),
     path('floors/', include('selection.urls')),
-    path('users/', include('users.urls'))]
-    # path('offices/', include(('offices.urls','offices'),namespace='offices')),
-    # path('zones/', include(('zones.urls','zones'),namespace='zones')),
-    # path('selection/', include(('selection.urls','selection'),namespace='selection')),
-    # path('users/', include(('users.urls','users'),namespace='users'))
+    path('users/', include('users.urls')),
+    path('reservation/', include('offices.urls', 'selection.urls'))]
 
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

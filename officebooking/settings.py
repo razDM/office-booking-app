@@ -34,6 +34,7 @@ LOCALHOST_DOMAIN = 'http://localhost:8000'
 # Application definition
 
 INSTALLED_APPS = [
+    'offices.apps.OfficesConfig',
     'users.apps.UsersConfig',
     'selection.apps.SelectionConfig',
     'django.contrib.admin',
@@ -42,8 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders'
+    'corsheaders',
+    'offices.booking_functions'
 ]
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend']
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

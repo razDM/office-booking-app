@@ -14,10 +14,6 @@ class Command(BaseCommand):
         print(f'Command will update a total of {len(users)} users.')
 
         for user in users:
-            # profile = Profile(
-            #     user=user
-            # )
-            # profile.save()
             Profile.objects.create(
                 user=user
             )
