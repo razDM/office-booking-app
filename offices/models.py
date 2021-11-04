@@ -14,6 +14,9 @@ class Reservation(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
 
+    class Meta:
+        unique_together = ('user', 'office', 'start_date','end_date')
+
     # def __str__(self):
     #     return f'{self.user} has booked {self.office} from {self.start_date.strftime("%d-%b-%Y %H:%M")} to' \
     #            f' {self.end_date.strftime("%d-%b-%Y %H:%M")} '

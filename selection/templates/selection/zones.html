@@ -5,26 +5,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
+<div class="row">
+    <div class="col">
 
-            <h1>Please choose a zone:</h1>
-            <ul>
-                {% for zone in zones %}
-                    <li style="margin-bottom: 10px;">
-                        <div>
-                            <div class="col-8">
-                                <a class="btn btn-primary btn-sm" href="{% url 'selection:office_details' zone.id %}">{{ zone.name }}</a>
-                            </div>
+        <h1>Total zones:</h1>
+        <ul>
+            {% for zone in zones %}
+                <li style="margin-bottom: 10px;">
+                    <div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-sm" href="{% url 'selection:office_details' zone.id %}">{{ zone.name }}</a>
                         </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="col">
-            <img src="https://constructionreviewonline.com/wp-content/uploads/2017/07/How-to-make-maximum-use-of-small-office-spaces.jpg"width="1000"/>
-        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        <img src="https://constructionreviewonline.com/wp-content/uploads/2017/07/How-to-make-maximum-use-of-small-office-spaces.jpg"width="900"/>
     </div>
 </div>
 {% endblock %}

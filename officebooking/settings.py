@@ -34,16 +34,18 @@ LOCALHOST_DOMAIN = 'http://localhost:8000'
 # Application definition
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
     'offices.apps.OfficesConfig',
     'users.apps.UsersConfig',
     'selection.apps.SelectionConfig',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'offices.booking_functions'
 ]
 AUTHENTICATION_BACKENDS = [
@@ -160,4 +162,12 @@ CORS_ALLOWED_ORIGINS = [
 ]
 LOGIN_URL = 'users:login'
 
-#changes here to use smtp???####
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]

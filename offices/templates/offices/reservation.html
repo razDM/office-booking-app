@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+<div class="row">
+    <div class="col">
     <h1> Dear {{ user.first_name }},</h1>
     <h2>See below the location details for the office no. {{ office_details.id }}</h2>
         <p><strong>Office no.</strong>  {{ office_details.id }}</p>
@@ -12,18 +14,13 @@
         <p><strong>Floor:</strong> {{ zone_details.floor_id }}</p>
         <p><strong>Reservation start date:</strong> {{ start_date }}</p>
         <p><strong>Reservation end date</strong> {{ end_date }}</p>
-            <form action="{% url 'offices:do_booking' office_details.id start_date end_date %}" method="post" id="payment-form">
+            <form action="{% url 'offices:do_booking' office_details.id start_date end_date %}" method="post" id="submit-form">
                 {% csrf_token %}
-                <div class="form-row">
-                    <label for="card-element">
-                        Credit or debit card
-                    </label>
-                    <div id="card-element" class="form-group form-control">
-                        <!-- A Stripe Element will be inserted here. -->
-                    </div>
-                    <!-- Used to display form errors. -->
-                    <div id="card-errors" role="alert"></div>
-                </div>
                 <button>Submit</button>
             </form>
+    </div>
+    <div class="col">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg"/>
+    </div>
+</div>
 {% endblock %}
