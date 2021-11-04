@@ -159,5 +159,3 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
 ]
 LOGIN_URL = 'users:login'
-
-#changes here to use smtp???####
