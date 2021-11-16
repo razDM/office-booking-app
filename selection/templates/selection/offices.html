@@ -5,16 +5,23 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Please choose an available office:</h1>
-    <ul>
-        {% for office in offices %}
-            <li style="margin-bottom: 10px;">
-                <div>
-                    <ul>
-                        <a class="btn btn-primary btn-sm" >{{ office.name }}</a>
-                    </ul>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="row">
+    <div class="col">
+        <h1>Total offices:</h1>
+        <ul>
+            {% for office in offices %}
+                <li style="margin-bottom: 10px;">
+                    <div>
+                        <ul>
+                            <a class="btn btn-primary btn-sm" >{{ office.name }}</a>
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg"/>
+    </div>
+</div>
 {% endblock %}

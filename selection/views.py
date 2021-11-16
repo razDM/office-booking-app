@@ -38,7 +38,6 @@ def show_zones(request):
 
 
 def show_zones_details_by_floor(request, floor_id):
-    # zone = get_object_or_404(Zone, floor_id=floor_id)
     return render(request, 'selection/zones.html', {
         'zones': Zone.objects.filter(floor_id=floor_id),
     })

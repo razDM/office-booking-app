@@ -5,20 +5,20 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Please choose a floor:</h1>
-            <ul>
-                {% for floor in floors %}
-                    <li style="margin-bottom: 10px;">
-                        <div>
-                            <a class="btn btn-primary btn-sm" href="{% url 'selection:zones_by_floor' floor.id %}">{{ floor.name }}</a>
-                        </div>
-                {% endfor %}
-            </ul>
-        <div class="col">
-            <img src="https://pbs.twimg.com/media/DSkuqPRUMAAEMrs.jpg:large" width="800"/>
-        </div>
-        </div>
+<div class="row">
+    <div class="col">
+        <h1>Total floors:</h1>
+        <ul>
+            {% for floor in floors %}
+                <li style="margin-bottom: 10px;">
+                    <div>
+                        <a class="btn btn-primary btn-sm" href="{% url 'selection:zones_by_floor' floor.id %}">{{ floor.name }}</a>
+                    </div>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col">
+        <img src="https://pbs.twimg.com/media/DSkuqPRUMAAEMrs.jpg:large" width="900"/>
+    </div>
+</div>
 {% endblock %}
