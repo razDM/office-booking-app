@@ -16,14 +16,7 @@
             <span>{{ title }}</span>
         </h1>
         <p class="hero__subtitle">Back to the office in safety</p>
-        <h3>Services</h3>
-        <ul>
-            {% for service in services  %}
-                <li>
-                    <strong>{{ service.name }}</strong>: {{ service.value }}
-                </li>
-            {% endfor %}
-        </ul>
+
         {% if not request.user.is_authenticated %}
             <h4>In order to book your seat, please login first!</h4>
             <a  class="btn btn-success" href="{% url 'users:login' %}">Log in</a>
@@ -38,6 +31,8 @@
                 <input id="end_date" type="date" name="end_date" value="{{ end_date }}">
                 <input type="submit" value= "Proceed">
             </form>
+            <a class="btn btn-success"  href="{% url 'offices:my_bookings' %}">View my bookings</a>
+
             <h4>Before leaving the page, please logout !</h4>
             <a class="btn btn-danger" href="{% url 'users:logout' %}">Logout</a>
 

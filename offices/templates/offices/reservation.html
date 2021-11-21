@@ -18,6 +18,10 @@
                 {% csrf_token %}
                 <button>Submit</button>
             </form>
+            <form action="{% url 'offices:back_to_homepage'%}" method="post">
+                {% csrf_token %}
+                <button>Back to homepage</button>
+            </form>
     </div>
     <div class="col">
         <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg"/>

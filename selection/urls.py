@@ -10,5 +10,4 @@ urlpatterns = [
     path('offices/<int:zone_id>/', show_offices_details, name='office_details'),
     path('zones', show_zones, name='all_zones'),
     path('zones/<int:floor_id>/', show_zones_details_by_floor, name='zones_by_floor'),
-
 ]

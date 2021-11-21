@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Bookings</title>
+{% endblock %}
+
+{% block content %}
+
+    <h1>My Bookings</h1>
+    <div class="row">
+        <ul>
+            {% for booking in my_bookings %}
+                {% for key,values in booking.items %}
+                    <div>
+                        {% if key != 'BookingId' %}
+                        <p><strong>{{ key }}</strong>  {{ values }}</p>
+
+                        {% else %}
+                             <a class="btn btn-danger" href="{% url 'offices:cancel_booking' values %}"> Cancel </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+        <div class="col">
+            <img src="https://pbs.twimg.com/media/DSkuqPRUMAAEMrs.jpg:large" width="900"/>
+        </div>
+    </div>
+
+{% endblock %}
