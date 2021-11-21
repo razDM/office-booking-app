@@ -1,11 +1,12 @@
 from django.conf import settings
 from django.db import models
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from utils import F1, F2, F3, F4
+from utils.constants.departments import DEPARTMENTS
 from utils.constants.zone_location import ZONE_LOCATION
 
 
-AuthUserModel = get_user_model()
+# AuthUserModel = get_user_model()
 
 
 class Floor(models.Model):
@@ -32,3 +33,7 @@ class Office(models.Model):
     def __str__(self):
         return f'{self.id}'
 
+
+class Department(models.Model):
+    department = models.CharField(choices=DEPARTMENTS, max_length=20)
+    allowed_zone = models.ForeignKey(Zone, related_name='zone_id', on_delete=models.SET_NULL, default=None, null=True)
