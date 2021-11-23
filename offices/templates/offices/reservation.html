@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>Reservation for office no. {{ office_id }}</title>
+    <title>Reservation for office no. {{ office_to_book.id }}</title>
 {% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col">
     <h1> Dear {{ user.first_name }},</h1>
-    <h2>See below the location details for the office no. {{ office_details.id }}</h2>
-        <p><strong>Office no.</strong>  {{ office_details.id }}</p>
-        <p><strong>Zone:</strong> {{ office_details.zone_id }}</p>
-        <p><strong>Floor:</strong> {{ zone_details.floor_id }}</p>
+    <h2>See below the location details for the office no. {{ office_to_book.id }}</h2>
+        <p><strong>Office no.</strong>  {{ office_to_book.id }}</p>
+        <p><strong>Zone:</strong> {{ office_to_book.zone_id }}</p>
+        <p><strong>Floor:</strong> {{ office_to_book.zone.floor.id}}</p>
         <p><strong>Reservation start date:</strong> {{ start_date }}</p>
         <p><strong>Reservation end date</strong> {{ end_date }}</p>
-            <form action="{% url 'offices:do_booking' office_details.id start_date end_date %}" method="post" id="submit-form">
+            <form action="{% url 'offices:save_booking' office_to_book.id start_date end_date %}" method="post" id="submit-form">
                 {% csrf_token %}
                 <button>Submit</button>
             </form>

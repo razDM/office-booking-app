@@ -6,24 +6,23 @@
 
 {% block content %}
 
-    <h1>My Bookings</h1>
-    <div class="row">
-        <ul>
-            {% for booking in my_bookings %}
-                {% for key,values in booking.items %}
-                    <div>
-                        {% if key != 'BookingId' %}
-                        <p><strong>{{ key }}</strong>  {{ values }}</p>
 
-                        {% else %}
-                             <a class="btn btn-danger" href="{% url 'offices:cancel_booking' values %}"> Cancel </a>
-                        {% endif %}
-                    </div>
-                {% endfor %}
+    <div class="row">
+        <div class="col-12">
+        <h1>My Bookings</h1>
+        <ul>
+            {% for booking in user_bookings %}
+                <p><strong>Office no.</strong>  {{ booking.office.id }}</p>
+                <p><strong>Zone:</strong> {{ booking.office.zone_id }}</p>
+                <p><strong>Floor:</strong> {{ booking.office.zone.floor.id }}</p>
+                <p><strong>Reservation start date:</strong> {{ booking.start_date }}</p>
+                <p><strong>Reservation end date</strong> {{ booking.end_date }}</p>
+                <a class="btn btn-danger" href="{% url 'offices:cancel_booking' booking.id %}"> Cancel </a>
             {% endfor %}
+
         </ul>
     </div>
-        <div class="col">
+        <div class="col-12">
             <img src="https://pbs.twimg.com/media/DSkuqPRUMAAEMrs.jpg:large" width="900"/>
         </div>
     </div>

@@ -5,9 +5,7 @@
     <title>Office Booking homepage</title>
 {% endblock%}
 
-{% block styles %}
-<!--    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}" />-->
-{%endblock%}
+
 {% block content%}
 <div class="row">
     <div class="col">
@@ -31,6 +29,15 @@
                 <input id="end_date" type="date" name="end_date" value="{{ end_date }}">
                 <input type="submit" value= "Proceed">
             </form>
+               {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {% if message.tags %}
+                        <script>alert("{{ message }}")</script>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+                {% endif %}
             <a class="btn btn-success"  href="{% url 'offices:my_bookings' %}">View my bookings</a>
 
             <h4>Before leaving the page, please logout !</h4>
@@ -50,3 +57,6 @@
     </div>
 
 {% endblock %}
+
+
+
