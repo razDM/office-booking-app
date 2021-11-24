@@ -6,7 +6,7 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-12">
-                        <img src="{{ request.user.profile.url }}" width="200" />
+                        <img src="{{ request.user.profile.image }}" width="200" />
                     </div>
                 </div>
             </div>
@@ -29,6 +29,11 @@
                 <div class="row">
                     <div class="col-12">
                         Username: {{ request.user.username }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Department: {{ user_department.department }}
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ from django.utils import timezone
 from selection.models import Department
 from utils.constants.activation import ACTIVATION_DICT
 
+
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     avatar = models.ImageField(upload_to='profile_images/', null=True, default=None)

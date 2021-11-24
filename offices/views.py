@@ -29,13 +29,10 @@ def get_available_offices(request):
             messages.warning(request, 'Do not overlap periods' )
             return redirect('/')
 
-        offices = list(Office.objects.values())
-        available_offices = []
-        for office in offices:
-            if check_availability(office['id'], request.GET['start_date'], request.GET['end_date']):
-                available_offices.append(office)
+        offices_for_booking = check_availability(request, request.GET['start_date'], request.GET['end_date'])
+
         return render( request, 'offices/availability.html',
-                       {'form_data': available_offices,
+                       {'form_data': offices_for_booking,
                         'start_date': request.GET['start_date'],
                         'end_date': request.GET['end_date']})
     else:

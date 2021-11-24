@@ -6,8 +6,6 @@ from selection.models import Office
 from django.urls import reverse_lazy
 
 
-
-
 AuthUserModel = get_user_model()
 
 
