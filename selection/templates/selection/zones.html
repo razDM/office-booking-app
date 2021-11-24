@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ zone.name }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h1>Total zones:</h1>
+        <ul>
+            {% for zone in zones %}
+                <li style="margin-bottom: 10px;">
+                    <div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-sm" href="{% url 'selection:office_details' zone.id %}">{{ zone.name }}</a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        <img src="https://constructionreviewonline.com/wp-content/uploads/2017/07/How-to-make-maximum-use-of-small-office-spaces.jpg"width="900"/>
+    </div>
+</div>
+{% endblock %}

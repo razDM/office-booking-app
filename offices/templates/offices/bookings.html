@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>My Bookings</title>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-12">
+        <h1>My Bookings</h1>
+        <ul>
+            {% for booking in user_bookings %}
+                <p><strong>Office no.</strong>  {{ booking.office.id }}</p>
+                <p><strong>Zone:</strong> {{ booking.office.zone_id }}</p>
+                <p><strong>Floor:</strong> {{ booking.office.zone.floor.id }}</p>
+                <p><strong>Reservation start date:</strong> {{ booking.start_date }}</p>
+                <p><strong>Reservation end date</strong> {{ booking.end_date }}</p>
+                <a class="btn btn-danger" href="{% url 'offices:cancel_booking' booking.id %}"> Cancel </a>
+            {% endfor %}
+
+        </ul>
+    </div>
+        <div class="col-12">
+            <img src="https://pbs.twimg.com/media/DSkuqPRUMAAEMrs.jpg:large" width="900"/>
+        </div>
+    </div>
+
+{% endblock %}

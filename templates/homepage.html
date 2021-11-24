@@ -5,34 +5,58 @@
     <title>Office Booking homepage</title>
 {% endblock%}
 
-{% block styles %}
-<!--    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}" />-->
-{%endblock%}
+
 {% block content%}
-<div class="container">
-    <div class="row">
-        <div class="col-4">
-            <h1>
-                <img src="https://i.pinimg.com/originals/05/3b/b9/053bb9b3b5534c448998e1065d01009e.png" width="50" />
-                <span>{{ title }}</span>
-            </h1>
-            <p class="hero__subtitle">Back to the office in safety</p>
-            <h3>Services</h3>
-            <ul>
-                {% for service in services  %}
-                    <li>
-                        <strong>{{ service.name }}</strong>: {{ service.value }}
-                    </li>
+<div class="row">
+    <div class="col">
+        <h1>
+            <img src="https://i.pinimg.com/originals/05/3b/b9/053bb9b3b5534c448998e1065d01009e.png" width="50" />
+            <span>{{ title }}</span>
+        </h1>
+        <p class="hero__subtitle">Back to the office in safety</p>
+
+        {% if not request.user.is_authenticated %}
+            <h4>In order to book your seat, please login first!</h4>
+            <a  class="btn btn-success" href="{% url 'users:login' %}">Log in</a>
+        {% else %}
+
+            <h4>Choose the dates you want to reserve an office!</h4>
+            <form action="reservation/" method="get">
+                 {% csrf_token %}
+                <label for="start_date">Start Date: </label>
+                <input id="start_date" type="date" name="start_date" value="{{ start_date }}">
+                <label for="end_date">End Date: </label>
+                <input id="end_date" type="date" name="end_date" value="{{ end_date }}">
+                <input type="submit" value= "Proceed">
+            </form>
+               {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {% if message.tags %}
+                        <script>alert("{{ message }}")</script>
+                    {% endif %}
                 {% endfor %}
             </ul>
-            <h4>In order to book your seat, please login first!</h4>
-        </div>
-        <div class="col-8">
-            <img src="https://smartway2.com/wp-content/uploads/2019/09/Prevent-hot-desking-failure.jpg.webp"width="500"/>
-        </div>
+                {% endif %}
+            <a class="btn btn-success"  href="{% url 'offices:my_bookings' %}">View my bookings</a>
 
-            </div>
-            <p>
+            <h4>Before leaving the page, please logout !</h4>
+            <a class="btn btn-danger" href="{% url 'users:logout' %}">Logout</a>
+
+        {% endif %}
+    </div>
+    <div class="col">
+        <img src="https://smartway2.com/wp-content/uploads/2019/09/Prevent-hot-desking-failure.jpg.webp"width="500"/>
+    </div>
+</div>
+</div>
+    <div class="col-auto mr-auto">
+        <p>
             For more information during COVID-19 restrictions in Romania, click "View more"
         </p><a  class="btn btn-outline-secondary" href="http://www.ms.ro/" target="_blank">View more...</a>
+    </div>
+
 {% endblock %}
+
+
+

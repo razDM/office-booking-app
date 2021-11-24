@@ -1,7 +1,9 @@
+import json
 import secrets
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from django.contrib.auth import get_user_model
+from django.contrib.auth.signals import user_logged_in
 from users.models import Profile, Activation
 from users.email import send_activation_mail
 
@@ -26,8 +28,12 @@ def create_activation(instance, created, **kwargs):
     if created:
         activation = Activation(
             user=instance,
-            token=secrets.token_hex(32),
-        )
+            token=secrets.token_hex(32),)
         activation.save()
 
         send_activation_mail(activation)
+
+
+@receiver(user_logged_in)
+def restore_my_bookings_from_db(request, user, **kwargs):
+    request.session['my_bookings'] = json.loads(user.cart.data) if hasattr(user, 'my_bookings') else {}

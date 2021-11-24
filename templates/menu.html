@@ -1,12 +1,13 @@
 <nav>
     <a href="/">Homepage</a>
-    <a href="{% url 'floors:all' %}">Floors</a>
-    <a href="{% url 'zones:all' %}">Zones</a>
-    <a href="{% url 'offices:all' %}">Offices</a>
+    <a href="{% url 'selection:all_floors' %}">Floors</a>
+    <a href="{% url 'selection:all_zones' %}">Zones</a>
+    <a href="{% url 'selection:all_offices' %}">Offices</a>
     {% if not request.user.is_authenticated %}
         <a href="{% url 'users:login' %}">Login</a>
         <a href="{% url 'users:register' %}">Register</a>
     {% else %}
         <a href="{% url 'users:logout' %}">Logout</a>
+
     {% endif %}
 </nav>

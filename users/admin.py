@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
-from users.models import AuthUser
+from users.models import AuthUser,Profile
+from selection.models import Floor,Office,Zone, Department
+from offices.models import Reservation
 
 
 @admin.register(AuthUser)
@@ -23,3 +25,32 @@ class AdminAuthUser(BaseUserAdmin):
         }),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'avatar', 'department')
+
+
+@admin.register(Floor)
+class FloorAdmin(admin.ModelAdmin):
+    list_display = ('name','floor_levels')
+
+
+@admin.register(Zone)
+class ZoneAdmin(admin.ModelAdmin):
+    list_display = ('name','floor','zone_location')
+
+
+@admin.register(Office)
+class OfficeAdmin(admin.ModelAdmin):
+    list_display = ('name','zone')
+
+
+@admin.register(Department)
+class DepartmentsAdmin(admin.ModelAdmin):
+    list_display = ('department', 'allowed_zone')
+
+@admin.register(Reservation)
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ('user','office','start_date','end_date')

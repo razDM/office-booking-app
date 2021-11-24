@@ -82,8 +82,6 @@ class Command(BaseCommand):
         verbose_field_name = self.username_field.verbose_name
         try:
             if options['interactive']:
-                # Same as user_data but without many to many fields and with
-                # foreign keys as fake model instances instead of raw IDs.
                 fake_user_data = {}
                 if hasattr(self.stdin, 'isatty') and not self.stdin.isatty():
                     raise NotRunningInTTYException
@@ -95,7 +93,6 @@ class Command(BaseCommand):
                         username = None
                 elif username == '':
                     raise CommandError('%s cannot be blank.' % capfirst(verbose_field_name))
-                # Prompt for username.
                 while username is None:
                     message = self._get_input_message(self.username_field, default_username)
                     username = self.get_input_data(self.username_field, message, default_username)
@@ -110,7 +107,6 @@ class Command(BaseCommand):
                     self.username_field.remote_field.model(username)
                     if self.username_field.remote_field else username
                 )
-                # Prompt for required fields.
                 for field_name in self.UserModel.REQUIRED_FIELDS:
                     field = self.UserModel._meta.get_field(field_name)
                     user_data[field_name] = options[field_name]
@@ -127,13 +123,9 @@ class Command(BaseCommand):
                         if not field.many_to_many:
                             fake_user_data[field_name] = input_value
 
-                        # Wrap any foreign keys in fake model instances
                         if field.many_to_one:
                             fake_user_data[field_name] = field.remote_field.model(input_value)
             else:
-                # Non-interactive mode.
-                # Use username from environment variable, if not provided in
-                # options.
                 if username is None:
                     username = os.environ.get('DJANGO_SUPERUSER_' + self.UserModel.USERNAME_FIELD.upper())
                 if username is None:

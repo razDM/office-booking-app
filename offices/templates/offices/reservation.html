@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Reservation for office no. {{ office_to_book.id }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+    <h1> Dear {{ user.first_name }},</h1>
+    <h2>See below the location details for the office no. {{ office_to_book.id }}</h2>
+        <p><strong>Office no.</strong>  {{ office_to_book.id }}</p>
+        <p><strong>Zone:</strong> {{ office_to_book.zone_id }}</p>
+        <p><strong>Floor:</strong> {{ office_to_book.zone.floor.id}}</p>
+        <p><strong>Reservation start date:</strong> {{ start_date }}</p>
+        <p><strong>Reservation end date</strong> {{ end_date }}</p>
+            <form action="{% url 'offices:save_booking' office_to_book.id start_date end_date %}" method="post" id="submit-form">
+                {% csrf_token %}
+                <button>Submit</button>
+            </form>
+            <form action="{% url 'offices:back_to_homepage'%}" method="post">
+                {% csrf_token %}
+                <button>Back to homepage</button>
+            </form>
+    </div>
+    <div class="col">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg"/>
+    </div>
+</div>
+{% endblock %}

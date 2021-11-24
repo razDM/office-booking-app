@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ office.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <p><strong>Name:</strong> {{ office.name }}</p>
+    <p><strong>Zone:</strong> {{ zone.name }}</p>
+    <p><strong>Floor:</strong> {{ floor.name }}</p>
+{% endblock %}

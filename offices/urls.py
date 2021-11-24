@@ -1,10 +1,15 @@
 from django.urls import path
-from offices.views import show_all_offices, show_offices_details
+from offices.views import get_available_offices, book_now, save_booking, back_button, my_bookings,cancel_booking
+
 
 app_name = 'offices'
 
 urlpatterns = [
-    path('', show_all_offices, name='all'),
-    path('<int:zone_id>/', show_offices_details, name='details'),
+    path('', get_available_offices, name='ReservationFormView'),
+    path('reserveNow/<int:id>/<str:start_date>/<str:end_date>/', book_now, name="book_now"),
+    path('doBooking/<int:id>/<str:start_date>/<str:end_date>/', save_booking, name="save_booking"),
+    path('backToHome/', back_button, name="back_to_homepage"),
+    path('myBookings/', my_bookings, name='my_bookings'),
+    path('cancelBooking/<int:id>/', cancel_booking, name='cancel_booking')
 
 ]
