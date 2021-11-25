@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from users.forms import RegisterForm, ProfileImageForm, PasswordForm
-from users.models import Activation
+from users.models import Activation, Profile
 from users.email import send_activation_mail
 from utils.constants.activation import ACTIVATION_DICT
 
@@ -53,6 +53,7 @@ def register_user(request):
 def show_profile(request):
     if request.method == 'GET':
         form = ProfileImageForm()
+        user_department = Profile.objects.get(user_id = request.user).department
     else:
         form = ProfileImageForm(request.POST, request.FILES, instance=request.user.profile)
 
@@ -62,7 +63,7 @@ def show_profile(request):
             return redirect(reverse('users:profile'))
 
     return render(request, 'users/profile.html', {
-        'form': form
+        'form': form, 'user_department' : user_department
     })
 
 

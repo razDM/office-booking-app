@@ -1,7 +1,9 @@
+<!--This can be used as a direct redirect after search-->
 {% extends 'base.html' %}
 
 {% block title %}
     <title>My Offices Page</title>
+
 {% endblock %}
 
 {% block content %}
@@ -11,7 +13,8 @@
                     <li style="margin-bottom: 10px;">
                         <div>
                             <div class="col-8">
-                                <a class="btn btn-primary btn-sm" href="{% url 'offices:book_now' form.id start_date end_date %}">{{ form.name }}</a>
+                                <a>Floor: {{ form.zone.floor.id }}, Zone: {{ form.zone.id }},Office: {{ form.id }}</a>
+                                <a class="btn btn-primary btn-sm" href="{% url 'offices:book_now' form.id start_date end_date %}"> Choose </a>
                             </div>
                         </div>
                     </li>

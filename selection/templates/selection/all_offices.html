@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>My Offices Page</title>
+{% endblock %}
+
+{% block content %}
+<h1>Available offices:</h1>
+<div class="row">
+    <div class="col-4">
+        <ul>
+            {% for office in offices %}
+                <li style="margin-bottom: 10px;">
+                    <div>
+                        <ul>
+                            <a class="btn btn-primary btn-sm" >{{ office.name }}</a>
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-4">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg" width="1500"/>
+    </div>
+</div>
+{% endblock %}

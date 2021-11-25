@@ -7,7 +7,7 @@ urlpatterns = [
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
     path('register/', register_user, name='register'),
-    path('profile/', show_profile, name='profile'),
+    path('profile', show_profile, name='profile'),
     path('activate/<str:token>/', activate, name='activate'),
     path('regenerate_token/<str:token>/', regenerate_token, name='regenerate_token'),
 ]

@@ -6,21 +6,25 @@
 {% block content %}
 <h1>Available offices:</h1>
 <div class="row">
-    <div class="col-4">
+    <div class="col-3">
         <ul>
             {% for office in offices %}
                 <li style="margin-bottom: 10px;">
+                    {% if start_date != "1990-01-01" %}
                     <div>
-                        <ul>
-                            <a class="btn btn-primary btn-sm" >{{ office.name }}</a>
-                        </ul>
+                        <a class="btn btn-primary btn-sm" href="{% url 'offices:book_now' office.id start_date end_date %}">Office {{ office.id }}</a>
                     </div>
+                    {% else %}
+                    <div>
+                        <a class="btn btn-primary btn-sm">Office {{ office.id }}</a>
+                    </div>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
     </div>
-    <div class="col-4">
-        <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg" width="1500"/>
+    <div class="col-6">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2017/02/3d-floor-plan-tv-show-office-thumbnail.jpg" width="1100"/>
     </div>
 </div>
 {% endblock %}

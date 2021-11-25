@@ -35,5 +35,9 @@ class Office(models.Model):
 
 
 class Department(models.Model):
-    department = models.CharField(choices=DEPARTMENTS, max_length=20)
+    department = models.CharField(choices=[('IT','IT'),('HR','HR'),('Mgmt','Mgmt')], max_length=20)
     allowed_zone = models.ForeignKey(Zone, related_name='zone_id', on_delete=models.SET_NULL, default=None, null=True)
+
+
+    def __str__(self):
+        return f'{self.department}'
