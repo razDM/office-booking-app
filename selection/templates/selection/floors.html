@@ -7,23 +7,18 @@
 {% block content %}
 <h1>Total floors:</h1>
 <div class="row">
-    <div class="col">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <ul>
-                        {% for floor in floors %}
-                            <li style="margin-bottom: 10px;">
-                                <div>
-                                    <a class="btn btn-primary btn-sm" href="{% url 'selection:zones_by_floor' floor.id %}">{{ floor.name }}</a>
-                                </div>
-                        {% endfor %}
-                    </ul>
-                 </div>
-            </div>
-        </div>
+    <div class="col-3">
+        <ul>
+            {% for floor in floors %}
+                <li style="margin-bottom: 10px;">
+                    <div>
+                        <a class="btn btn-primary btn-sm" href="{% url 'selection:zones_by_floor' floor.id %}">Floor {{ floor.id }}</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
-    <div class="col">
+    <div class="col-6">
         <img src="https://pbs.twimg.com/media/DSkuqPRUMAAEMrs.jpg:large" width="900"/>
     </div>
 </div>

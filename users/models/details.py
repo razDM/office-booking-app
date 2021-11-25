@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.templatetags.static import static
 from django.utils import timezone
-
 from selection.models import Department
 from utils.constants.activation import ACTIVATION_DICT
 

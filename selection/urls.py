@@ -1,5 +1,5 @@
 from django.urls import path
-from selection.views import show_floors,show_floors_details, show_all_offices, show_offices_details, show_zones, show_zones_details_by_floor
+from selection.views import show_floors, show_floors_details, show_all_offices, show_offices_details, show_zones, show_zones_details_by_floor
 
 app_name = 'selection'
 
