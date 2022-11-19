@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'officebooking.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'HOST': config('DB_HOST', 'localhost'),
         'NAME': config('DB_NAME', 'office_booking_app'),
         'PORT': config('DB_PORT', '3306'),
